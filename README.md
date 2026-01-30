@@ -38,6 +38,28 @@ Possible outputs:
 
 Several invalid and unstable example matchings are included in the data folder for testing.
 
+## Task C: Scalability Analysis
+
+The file runtime.py measures the running time of the matching engine and the verifier for increasing values of n:
+
+    n = 1, 2, 4, 8, 16, 32, 64, 128, 256, 512
+
+The script prints timing results, which were then used to generate the graph below.
+
+### How to run the scalability experiment
+
+    python3 src/runtime.py
+
+### Runtime Graph
+
+![Runtime Scalability of Matching Engine and Verifier](data/runtime_scalability.png)
+
+### Observed Trend
+
+As the number of hospitals and students increases, the running time of both the matching engine and the verifier increases rapidly. The growth is clearly non-linear and closely resembles quadratic behavior. This matches the theoretical O(n^2) time complexity of the Gale–Shapley algorithm and the stability-checking process, since both involve nested iterations over participants.
+
+We copied the printed timing results into Google Sheets to make the line graph.
+
 ## Assumptions
 
 - Preference lists are complete and contain strict rankings.
